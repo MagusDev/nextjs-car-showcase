@@ -13,7 +13,7 @@ const CustomFilter = ({ title, options }: CustomFilterProps) => {
   const [selected, setSelected] = useState(options[0]);
   const router = useRouter();
 
-  const handleUpdateParams = (e: { type: string; value: string }) => {
+  const handleUpdateParams = (e: { type?: string; value: string }) => {
     const newPathName = updatSearchParams(title, e.value.toLowerCase());
     router.push(newPathName, { scroll: false });
   };
